@@ -17,7 +17,6 @@
 <body>
   <header class="header">
     <div class="header__inner container">
-
       <nav class="header__nav">
         <a class="header__logo" href="#">
           <svg class="header__logo-svg" width="16" height="18" viewBox="0 0 16 18" fill="none"
@@ -33,7 +32,6 @@
         <a class="header__make-burger header__link" href="#">
           Make Your Burger
         </a>
-
       </nav>
 
       <div class="header__menu">
@@ -92,10 +90,10 @@
     </div>
   </header>
 
-  <main class="main main__wrapper">
-    <section class="main__inner">
-      <div class="main__content container">
-        <h1 class="main__name">
+  <main class="main">
+    <section class="main__content container">
+      <div class="hero">
+        <h1 class="hero__title">
           Make Your Burger
         </h1>
 
@@ -111,210 +109,294 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="burger-constructor">
+      <div class="burger-constructor" style="display: none">
+        <div class="burger-constructor__inner">
+          <h1 class="hero__title">
+            Make Your Burger
+          </h1>
+          <div class="burger-constructor__burger-container">
+            <div class="burger-constructor__warning">
+              <img class="burger-constructor__warning-img" src="images/emojis/emoji-6.png" alt="emoji">
+              <p class="burger-constructor__warning-text">
+                Are you sure?
+              </p>
+            </div>
+            <div class="burger-constructor__content">
 
-          <!-- <img class="burger-constructor__ingridient-img" id="cutlet-img" data-attribute="cutlet"
-            src="images/burger-constructor/cutlet.png" alt="cutlet">
-          <img class="burger-constructor__ingridient-img" id="mayo-img" data-attribute="mayo"
-            src="images/burger-constructor/mayo.png" alt="mayo">
-          <img class="burger-constructor__ingridient-img" id="onion-img" data-attribute="onion"
-            src="images/burger-constructor/onion.png" alt="onion">
-          <img class="burger-constructor__ingridient-img" id="tomato-img" data-attribute="tomato"
-            src="images/burger-constructor/tomato.png" alt="tomato">
-          <img class="burger-constructor__ingridient-img" id="cucumber-img" data-attribute="cucumber"
-            src="images/burger-constructor/cucumber.png" alt="cucumber">
-          <img class="burger-constructor__ingridient-img" id="cheese-img" data-attribute="cheese"
-            src="images/burger-constructor/cheese.png" alt="cheese">
-          <img class="burger-constructor__ingridient-img" id="salad-img" data-attribute="salad"
-            src="images/burger-constructor/salad.png" alt="salad">
-          <img class="burger-constructor__ingridient-img" id="bun-img" data-attribute="bun"
-            src="images/burger-constructor/bun.png" alt="bun"> -->
-
-          <div class="burger-constructor__content">
-
-
+            </div>
+            <div class="burger-constructor__imgs-container">
+              <img class="burger-constructor__bg" src="images/burger-constructor/constructor-bg.png" alt="background">
+              <img class="burger-constructor__bottom-bun" src="images/burger-constructor/bottom-bun.png"
+                alt="background">
+              <button class="burger-constructor__ketchup-btn" type="button" id="ketchup">
+                <img class="burger-constructor__ketchup" data-ingridient="ketchup"
+                  src="images/burger-constructor/ketchup.png" alt="ketchup">
+              </button>
+              <p class="burger-constructor__ketchup-added" id="ketchup-added">
+                + Tomato Ketchup
+                <span>
+                  1.2oz
+                </span>
+              </p>
+            </div>
           </div>
-          <img class="burger-constructor__bg" src="images/burger-constructor/constructor-bg.png" alt="background">
-          <img class="burger-constructor__bottom-bun" src="images/burger-constructor/bottom-bun.png" alt="background">
-        </div>
-
-        <div class="burger-constructor__summary">
-          <h2 class="burger-constructor__summary-name">
-            Summary
-          </h2>
-          <div class="burger-constructor__price-block">
-            <p class="burger-constructor__price">
-              $0.00
+          <div class="burger-constructor__summary">
+            <h2 class="burger-constructor__summary-name">
+              Summary
+            </h2>
+            <div class="burger-constructor__price-block">
+              <p class="burger-constructor__pricing">
+                $
+                <span class="burger-constructor__price">
+                  0.00
+                </span>
+              </p>
+              <button class="burger-constructor__checkout">
+                Checkout
+              </button>
+            </div>
+            <p class="burger-constructor__offer">
+              Build a
+              <span class="burger-constructor__offer-price">
+                $10
+              </span>
+              Burger and Get a Gift
             </p>
-            <button class="burger-constructor__btn">
-
-            </button>
+            <ul class="burger-constructor__summary-list">
+              <li class="burger-constructor__summary-item">
+                <img class="burger-constructor__summary-img" src="images/svg/time.svg" alt="time">
+                <span class="burger-constructor__summary-min">
+                  0
+                </span>
+                &nbsp;min
+              </li>
+              <li class="burger-constructor__summary-item">
+                <img class="burger-constructor__summary-img" src="images/svg/scales.svg" alt="scales">
+                <span class="burger-constructor__summary-weight">
+                  0
+                </span>
+                &nbsp;oz
+              </li>
+              <li class="burger-constructor__summary-item">
+                <img class="burger-constructor__summary-img" src="images/svg/calories.svg" alt="calories">
+                <span class="burger-constructor__summary-calories">
+                  0
+                </span>
+                &nbsp;kcal
+              </li>
+            </ul>
           </div>
-          <p class="burger-constructor__offer">
-            Build a
-            <span class="burger-constructor__offer-price">
-              $10
-            </span>
-            Burger and Get a Gift
-          </p>
-          <ul class="burger-constructor__summary-list">
-            <li class="burger-constructor__summary-item">
-              <img class="burger-constructor__summary-img" src="images/svg/time.svg" alt="time">
-              <span class="burger-constructor__summary-min">
-                0
-              </span>
-              &nbsp;min
+        </div>
+        <div class="ingridients container">
+          <ul class="ingridients__content-list">
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="cutlet" src="images/burger-constructor/cutlet.png" alt="meat">
+              <p class="ingridients__name">
+                Cutlet
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="cutlet">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="cutlet">
+                  +
+                </button>
+              </div>
             </li>
-            <li class="burger-constructor__summary-item">
-              <img class="burger-constructor__summary-img" src="images/svg/scales.svg" alt="scales">
-              <span class="burger-constructor__summary-weight">
-                0
-              </span>
-              &nbsp;oz
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="mayo" src="images/burger-constructor/mayo.png" alt="mayo">
+              <p class="ingridients__name">
+                Mayo
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="mayo">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="mayo">
+                  +
+                </button>
+              </div>
             </li>
-            <li class="burger-constructor__summary-item">
-              <img class="burger-constructor__summary-img" src="images/svg/calories.svg" alt="calories">
-              <span class="burger-constructor__summary-calories">
-                0
-              </span>
-              &nbsp;kcal
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="onion" src="images/burger-constructor/onion.png" alt="onion">
+              <p class="ingridients__name">
+                Onion
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="onion">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="onion">
+                  +
+                </button>
+              </div>
+            </li>
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="tomato" src="images/burger-constructor/tomato.png" alt="tomato">
+              <p class="ingridients__name">
+                Tomato
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="tomato">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="tomato">
+                  +
+                </button>
+              </div>
+            </li>
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="cucumber" src="images/burger-constructor/cucumber.png" alt="cucumber">
+              <p class="ingridients__name">
+                Cucumber
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="cucumber">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="cucumber">
+                  +
+                </button>
+              </div>
+            </li>
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="cheese" src="images/burger-constructor/cheese.png" alt="cheese">
+              <p class="ingridients__name">
+                Cheese
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="cheese">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="cheese">
+                  +
+                </button>
+              </div>
+            </li>
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="salad" src="images/burger-constructor/salad.png" alt="salad">
+              <p class="ingridients__name">
+                Salad
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="salad">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="salad">
+                  +
+                </button>
+              </div>
+            </li>
+
+            <li class="ingridients__item">
+              <img class="ingridients__img" id="middle-bun" src="images/burger-constructor/bun.png" alt="middle-bun">
+              <p class="ingridients__name">
+                Bun
+              </p>
+              <div class="ingridients__qty-choice">
+                <button class="ingridients__btn-minus" data-ingridient="bun">
+                  -
+                </button>
+                <input class="ingridients__qty" type="number" placeholder="0">
+                <button class="ingridients__btn-plus btn-plus" data-ingridient="bun">
+                  +
+                </button>
+              </div>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="ingridients container">
-        <ul class="ingridients__content-list">
+    </section>
 
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="cutlet" src="images/burger-constructor/cutlet.png" alt="meat">
-            <p class="ingridients__name">
-              Cutlet
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="cutlet">
-                -
+    <section class="checkout" style="display: none">
+      <div class="checkout__inner">
+        <div class="checkout__content">
+          <div class="checkout__top">
+            <h2 class="checkout__title">
+              <img class="checkout__png" src="images/checkout/checkout.png" alt="checkout">
+              Checkout
+            </h2>
+            <button class="checkout__cancel-btn cancel">
+              <img class="checkout__cancel-png" src="images/checkout/cancel.png" alt=cancel">
+            </button>
+          </div>
+          <form class="checkout__info">
+
+            <div class="checkout__block">
+              <label class="checkout__label-name label" for="name">
+                Your Name
+              </label>
+              <input class="checkout__name" type="text" name="name" placeholder="Jerome Porter" required>
+
+            </div>
+
+            <div class="checkout__block">
+
+              <label class="checkout__label-phone label" for="phone">
+                Phone Number
+              </label>
+              <input class="checkout__phone" type="phone" name="phone" placeholder="(433) 577-1343" required>
+            </div>
+
+            <div class="checkout__block">
+              <label class="checkout__label-address label" for="address">
+                Shipping Address
+              </label>
+              <input class="checkout__address" type="text" name="address" placeholder="1038 Cinder Berry Turnabout"
+                required>
+            </div>
+
+            <div class="checkout__block">
+              <label class="checkout__label-time label" for="time">
+                Time to Delivery
+              </label>
+              <select class="checkout__select-time" type="time" name="time" required>
+                <option></option>
+                <option>9:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>13:00 PM</option>
+                <option>14:00 PM</option>
+                <option>15:00 PM</option>
+                <option>16:00 PM</option>
+                <option>17:00 PM</option>
+                <option>18:00 PM</option>
+
+              </select>
+            </div>
+
+            <div class="checkout__btns">
+              <button class="checkout__cancel cancel" type="button">
+                Cancel
               </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="cutlet">
-                +
+              <button class="checkout__proceed" type="submit">
+                Checkout
               </button>
             </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="mayo" src="images/burger-constructor/mayo.png" alt="mayo">
-            <p class="ingridients__name">
-              Mayo
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="mayo">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="mayo">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="onion" src="images/burger-constructor/onion.png" alt="onion">
-            <p class="ingridients__name">
-              Onion
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="onion">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="onion">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="tomato" src="images/burger-constructor/tomato.png" alt="tomato">
-            <p class="ingridients__name">
-              Tomato
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="tomato">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="tomato">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="cucumber" src="images/burger-constructor/cucumber.png" alt="cucumber">
-            <p class="ingridients__name">
-              Cucumber
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="cucumber">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="cucumber">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="cheese" src="images/burger-constructor/cheese.png" alt="cheese">
-            <p class="ingridients__name">
-              Cheese
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="cheese">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="cheese">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="salad" src="images/burger-constructor/salad.png" alt="salad">
-            <p class="ingridients__name">
-              Salad
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="salad">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="salad">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li class="ingridients__item">
-            <img class="ingridients__img" id="middle-bun" src="images/burger-constructor/bun.png" alt="middle-bun">
-            <p class="ingridients__name">
-              Bun
-            </p>
-            <div class="ingridients__qty-choice">
-              <button class="ingridients__btn-minus" data-ingridient="bun">
-                -
-              </button>
-              <input class="ingridients__qty" type="number" placeholder="0">
-              <button class="ingridients__btn-plus btn-plus" data-ingridient="bun">
-                +
-              </button>
-            </div>
-          </li>
-        </ul>
+          </form>
+        </div>
+        <div class="checkout__finished" style="display: none">
+          Thank you for your order!
+          You will receibe the confirmation email shortly
+        </div>
       </div>
     </section>
   </main>
