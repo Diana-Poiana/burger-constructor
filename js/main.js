@@ -1,8 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
+  // header navigation links
   const profileMenuBtn = document.querySelector('.header__profile-menu');
   const profileMenu = document.querySelector('.header__drop-menu');
 
-  // show and hide sections
+  // to show and hide different sections
   const makeBurgerBtn = document.querySelector('.hero__make-burger-btn');
   const makeBurgerHeaderBtn = document.querySelector('.header__make-burger');
   const headerLink = document.querySelector('.header__discover-page');
@@ -34,6 +35,15 @@ window.addEventListener('DOMContentLoaded', () => {
   const finishBtn = document.querySelector('.checkout__proceed');
   const modalWindowContent = document.querySelector('.checkout__content');
   const modalWindowConfirmation = document.querySelector('.checkout__finished');
+
+  // drop menu
+  const dropMenuDesktop = document.getElementById('desktop-drop-menu');
+  const dropMenuMobile = document.getElementById('mobile-drop-menu');
+  const dropMenuDesktopBtn = document.getElementById('desktop-menu-btn');
+  const dropMenuMobileBtn = document.getElementById('mobile-menu-btn');
+
+  // const burgerMenuBtn = document.querySelector('.mobile-menu__burger-btn');
+  // const mobileMenu = document.querySelector('.mobile-menu__list');
 
 
   let currentBottomValue = 40;
@@ -85,6 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const newElem = document.createElement('img');
     newElem.src = `images/burger-constructor/${ingridient}.png`;
     newElem.setAttribute('data-ingridient', ingridient);
+    newElem.classList.add('new-ingridient');
     return newElem;
   }
 
@@ -227,6 +238,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // adding ingridient animation
   function animation(element) {
 
+
     const animation = element.animate(
       [
         { transform: 'translate(0)' },
@@ -347,9 +359,19 @@ window.addEventListener('DOMContentLoaded', () => {
     clearInterval(finish);
   }
 
+  function toggleMenu(menu, btn) {
+    menu.classList.toggle('active');
+    btn.classList.toggle('active');
+  }
+
   // event listeners
-  profileMenuBtn.addEventListener('click', () => {
-    profileMenu.classList.toggle('active');
+
+  dropMenuDesktopBtn.addEventListener('click', () => {
+    toggleMenu(dropMenuDesktop, dropMenuDesktopBtn);
+  });
+
+  dropMenuMobileBtn.addEventListener('click', () => {
+    toggleMenu(dropMenuMobile, dropMenuMobileBtn);
   });
 
   makeBurgerBtn.addEventListener('click', showBurgerConstructor);
@@ -398,5 +420,6 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', closeModalWindow);
   });
 
+  // burgerMenuBtn.addEventListener('click', toggleMobileMenu);
 
 });

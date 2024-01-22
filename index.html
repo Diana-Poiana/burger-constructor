@@ -17,6 +17,7 @@
 <body>
   <header class="header">
     <div class="header__inner container">
+      <!-- header navigation and menu -->
       <nav class="header__nav">
         <a class="header__logo" href="#">
           <svg class="header__logo-svg" width="16" height="18" viewBox="0 0 16 18" fill="none"
@@ -47,9 +48,9 @@
         <a class="header__call-us-btn btn" href="#">
           8 800 437-87-22
         </a>
-        <button class="header__profile-menu" type="button">
-          <img class="header__profile-emoji" src="images/emojis/emoji-0.png" alt="profile emoji of smiling man">
-          <svg class="header__profile-svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+        <button class="header__profile-menu profile" id="desktop-menu-btn" type="button">
+          <img class="profile__emoji" src="images/emojis/emoji-0.png" alt="profile emoji of smiling man">
+          <svg class="profile__svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
             fill="none">
             <g clip-path="url(#clip0_1_1310)">
               <rect x="1" y="1" width="10" height="5" fill="#3273D3" />
@@ -63,8 +64,8 @@
             </defs>
           </svg>
         </button>
-
-        <nav class="header__drop-menu drop-menu">
+        <!-- header DESKTOP drop menu -->
+        <nav class="header__drop-menu drop-menu" id="desktop-drop-menu">
           <p class="drop-menu__profile-holder">
             Diana
           </p>
@@ -87,12 +88,77 @@
           </ul>
         </nav>
       </div>
+
+      <!-- mobile navigation and mobile drop menu -->
+      <nav class="mobile-menu">
+        <a class="mobile-menu__logo" href="images/svg/logo.svg">
+          <svg class="header__logo-svg" width="16" height="18" viewBox="0 0 16 18" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.1644 0C14.6947 0 15.1332 0.183785 15.4799 0.551353C15.8266 0.918919 16 1.39459 16 1.97838V15.6973C16 16.2595 15.8266 16.7351 15.4799 17.1243C15.1332 17.4919 14.6947 17.6757 14.1644 17.6757C13.6342 17.6757 13.1957 17.4919 12.8489 17.1243C12.5226 16.7568 12.3493 16.2919 12.3289 15.7297C11.819 16.3568 11.1256 16.8973 10.2486 17.3514C9.39197 17.7838 8.48439 18 7.52581 18C6.11855 18 4.84385 17.6216 3.70172 16.8649C2.55959 16.0865 1.65201 15.0162 0.978968 13.6541C0.326323 12.2919 0 10.7459 0 9.01622C0 7.28649 0.326323 5.74054 0.978968 4.37838C1.63161 2.99459 2.5188 1.92432 3.64054 1.16757C4.78266 0.38919 6.03697 0 7.40344 0C8.38241 0 9.30019 0.194595 10.1568 0.583784C11.0134 0.951351 11.7374 1.42703 12.3289 2.01081V1.97838C12.3289 1.41621 12.5022 0.951351 12.8489 0.583784C13.1957 0.194595 13.6342 0 14.1644 0ZM7.9847 14.4324C9.31039 14.4324 10.3913 13.9243 11.2275 12.9081C12.0637 11.8703 12.4818 10.573 12.4818 9.01622C12.4818 7.45946 12.0637 6.16216 11.2275 5.12432C10.3913 4.08649 9.31039 3.56757 7.9847 3.56757C6.67941 3.56757 5.60867 4.08649 4.77247 5.12432C3.93626 6.16216 3.51816 7.45946 3.51816 9.01622C3.51816 10.573 3.92607 11.8703 4.74187 12.9081C5.57808 13.9243 6.65902 14.4324 7.9847 14.4324Z"
+              fill="#5243C2" />
+          </svg>
+        </a>
+        <a class="mobile-menu__phone" href="#">
+          <svg class="header__call-me-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14 10.9467V13.304C14.0001 13.4728 13.9361 13.6353 13.8211 13.7588C13.706 13.8823 13.5484 13.9575 13.38 13.9693C13.0887 13.9893 12.8507 14 12.6667 14C6.77533 14 2 9.22467 2 3.33333C2 3.14933 2.01 2.91133 2.03067 2.62C2.04248 2.45163 2.11772 2.29401 2.2412 2.17894C2.36468 2.06387 2.52722 1.99992 2.696 2H5.05333C5.13603 1.99992 5.2158 2.03057 5.27715 2.08601C5.33851 2.14145 5.37706 2.21772 5.38533 2.3C5.40067 2.45333 5.41467 2.57533 5.428 2.668C5.56049 3.59262 5.832 4.49189 6.23333 5.33533C6.29667 5.46867 6.25533 5.628 6.13533 5.71333L4.69667 6.74133C5.5763 8.79097 7.2097 10.4244 9.25933 11.304L10.286 9.868C10.328 9.80933 10.3892 9.76725 10.459 9.7491C10.5288 9.73095 10.6028 9.73787 10.668 9.76867C11.5113 10.1692 12.4104 10.4401 13.3347 10.572C13.4273 10.5853 13.5493 10.6 13.7013 10.6147C13.7835 10.6231 13.8596 10.6617 13.9149 10.7231C13.9702 10.7844 14.0008 10.8641 14.0007 10.9467H14Z"
+              fill="#1f2939" />
+          </svg>
+          Call Me Back
+        </a>
+        <button class="mobile-menu__burger-btn" id="mobile-menu-btn">
+          <span class="mobile-menu__burger-span">
+
+          </span>
+        </button>
+      </nav>
+
+      <ul class="mobile-drop-menu__list" id="mobile-drop-menu">
+        <li class="mobile-drop-menu__item">
+          <a class="mobile-drop-menu__link" href="#">
+            8 800 437-87-22
+          </a>
+        </li>
+        <li class="mobile-drop-menu__item">
+          <a class="mobile-drop-menu__link" href="#">
+            Discover
+          </a>
+        </li>
+        <li class="mobile-drop-menu__item">
+          <a class="mobile-drop-menu__link" href="#">
+            Make your Burger
+          </a>
+        </li>
+        <li class="mobile-drop-menu__item">
+          <button class="mobile-drop-menu__profile-menu profile" type="button">
+            <img class="profile__emoji" src="images/emojis/emoji-0.png" alt="profile emoji of smiling man">
+            <svg class="profile__svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+              fill="none">
+              <g clip-path="url(#clip0_1_1310)">
+                <rect x="1" y="1" width="10" height="5" fill="#3273D3" />
+                <rect x="1" y="6" width="10" height="5" fill="#FFD018" />
+              </g>
+              <rect x="0.5" y="0.5" width="11" height="11" rx="5.5" stroke="#F0F7FA" />
+              <defs>
+                <clipPath id="clip0_1_1310">
+                  <rect x="1" y="1" width="10" height="10" rx="5" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <p class="profile__name">
+              Diana Anna
+            </p>
+          </button>
+        </li>
+      </ul>
     </div>
   </header>
 
   <main class="main">
     <section class="main__content container">
-      <div class="hero">
+      <div class="hero" style="display: none">
         <h1 class="hero__title">
           Make Your Burger
         </h1>
@@ -106,14 +172,15 @@
                 burger
               </a>
               <img class="hero__burger-img" src="images/burger.png" alt="burger">
+              <img class="hero__bg-img" src="images/vector.png" alt="burger">
             </div>
           </div>
         </div>
       </div>
 
-      <div class="burger-constructor" style="display: none">
+      <div class="burger-constructor">
         <div class="burger-constructor__inner">
-          <h1 class="hero__title">
+          <h1 class="burger-constructor__title">
             Make Your Burger
           </h1>
           <div class="burger-constructor__burger-container">
@@ -128,13 +195,12 @@
             </div>
             <div class="burger-constructor__imgs-container">
               <img class="burger-constructor__bg" src="images/burger-constructor/constructor-bg.png" alt="background">
-              <img class="burger-constructor__bottom-bun" src="images/burger-constructor/bottom-bun.png"
-                alt="background">
-              <button class="burger-constructor__ketchup-btn" type="button" id="ketchup">
+              <img class="burger-constructor__bottom-bun" src="images/burger-constructor/bottom-bun.png" alt="bun">
+              <button class="burger-constructor__ketchup-btn" style="display: none" type="button" id="ketchup">
                 <img class="burger-constructor__ketchup" data-ingridient="ketchup"
                   src="images/burger-constructor/ketchup.png" alt="ketchup">
               </button>
-              <p class="burger-constructor__ketchup-added" id="ketchup-added">
+              <p class="burger-constructor__ketchup-added" style="display: none" id="ketchup-added">
                 + Tomato Ketchup
                 <span>
                   1.2oz
@@ -164,24 +230,25 @@
               </span>
               Burger and Get a Gift
             </p>
-            <ul class="burger-constructor__summary-list">
-              <li class="burger-constructor__summary-item">
-                <img class="burger-constructor__summary-img" src="images/svg/time.svg" alt="time">
-                <span class="burger-constructor__summary-min">
+
+            <ul class="burger-constructor__summary-list summary-list">
+              <li class="summary-list__item">
+                <img class="summary-list__img" src="images/svg/time.svg" alt="time">
+                <span class="summary-list__min">
                   0
                 </span>
                 &nbsp;min
               </li>
-              <li class="burger-constructor__summary-item">
-                <img class="burger-constructor__summary-img" src="images/svg/scales.svg" alt="scales">
-                <span class="burger-constructor__summary-weight">
+              <li class="summary-list__item">
+                <img class="summary-list__img" src="images/svg/scales.svg" alt="scales">
+                <span class="summary-list__weight">
                   0
                 </span>
                 &nbsp;oz
               </li>
-              <li class="burger-constructor__summary-item">
-                <img class="burger-constructor__summary-img" src="images/svg/calories.svg" alt="calories">
-                <span class="burger-constructor__summary-calories">
+              <li class="summary-list__item">
+                <img class="summary-list__img" src="images/svg/calories.svg" alt="calories">
+                <span class="summary-list__calories">
                   0
                 </span>
                 &nbsp;kcal
@@ -189,6 +256,40 @@
             </ul>
           </div>
         </div>
+
+        <div class="mobile-summary__block">
+          <ul class="mobile-summary">
+            <li class="mobile-summary__item">
+              <img class="mobile-summary__img" src="images/svg/time.svg" alt="time">
+              <span class="mobile-summary__min">
+                0
+              </span>
+              &nbsp;min
+            </li>
+            <li class="mobile-summary__item">
+              <img class="mobile-summary__img" src="images/svg/scales.svg" alt="scales">
+              <span class="mobile-summary__weight">
+                0
+              </span>
+              &nbsp;oz
+            </li>
+            <li class="mobile-summary__item">
+              <img class="mobile-summary__img" src="images/svg/calories.svg" alt="calories">
+              <span class="mobile-summary__calories">
+                0
+              </span>
+              &nbsp;kcal
+            </li>
+          </ul>
+
+          <btn class="mobile-summary__ketchup-added" type="button">
+            + Tomato Ketchup
+            <span class="mobile-summary__span">
+              1.2oz
+            </span>
+          </btn>
+        </div>
+
         <div class="ingridients container">
           <ul class="ingridients__content-list">
 
@@ -321,6 +422,18 @@
             </li>
           </ul>
         </div>
+
+        <div class="mobile-checkout">
+          <p class="mobile-checkout__pricing">
+            $
+            <span class="mobile-checkout__price">
+              0.00
+            </span>
+          </p>
+          <button class="mobile-checkout__btn">
+            Checkout
+          </button>
+        </div>
       </div>
 
     </section>
@@ -395,7 +508,7 @@
         </div>
         <div class="checkout__finished" style="display: none">
           Thank you for your order!
-          You will receibe the confirmation email shortly
+          You will receive the confirmation email shortly
         </div>
       </div>
     </section>
