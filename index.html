@@ -91,7 +91,7 @@
 
       <!-- mobile navigation and mobile drop menu -->
       <nav class="mobile-menu">
-        <a class="mobile-menu__logo" href="images/svg/logo.svg">
+        <a class="mobile-menu__logo" href="#">
           <svg class="header__logo-svg" width="16" height="18" viewBox="0 0 16 18" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -158,7 +158,7 @@
 
   <main class="main">
     <section class="main__content container">
-      <div class="hero" style="display: none">
+      <div class="hero">
         <h1 class="hero__title">
           Make Your Burger
         </h1>
@@ -183,6 +183,7 @@
           <h1 class="burger-constructor__title">
             Make Your Burger
           </h1>
+
           <div class="burger-constructor__burger-container">
             <div class="burger-constructor__warning">
               <img class="burger-constructor__warning-img" src="images/emojis/emoji-6.png" alt="emoji">
@@ -196,11 +197,11 @@
             <div class="burger-constructor__imgs-container">
               <img class="burger-constructor__bg" src="images/burger-constructor/constructor-bg.png" alt="background">
               <img class="burger-constructor__bottom-bun" src="images/burger-constructor/bottom-bun.png" alt="bun">
-              <button class="burger-constructor__ketchup-btn" style="display: none" type="button" id="ketchup">
+              <button class="burger-constructor__ketchup-btn ketchup-btn" type="button">
                 <img class="burger-constructor__ketchup" data-ingridient="ketchup"
                   src="images/burger-constructor/ketchup.png" alt="ketchup">
               </button>
-              <p class="burger-constructor__ketchup-added" style="display: none" id="ketchup-added">
+              <p class="burger-constructor__ketchup-added" id="ketchup-added">
                 + Tomato Ketchup
                 <span>
                   1.2oz
@@ -208,29 +209,31 @@
               </p>
             </div>
           </div>
-          <div class="burger-constructor__summary">
-            <h2 class="burger-constructor__summary-name">
-              Summary
-            </h2>
-            <div class="burger-constructor__price-block">
-              <p class="burger-constructor__pricing">
-                $
-                <span class="burger-constructor__price">
-                  0.00
-                </span>
-              </p>
-              <button class="burger-constructor__checkout">
-                Checkout
-              </button>
-            </div>
-            <p class="burger-constructor__offer">
-              Build a
-              <span class="burger-constructor__offer-price">
-                $10
-              </span>
-              Burger and Get a Gift
-            </p>
 
+          <div class="burger-constructor__summary">
+            <div class="burger-constructor__top">
+              <h2 class="burger-constructor__summary-name">
+                Summary
+              </h2>
+              <div class="burger-constructor__price-block">
+                <p class="burger-constructor__pricing">
+                  $
+                  <span class="burger-constructor__price">
+                    0.00
+                  </span>
+                </p>
+                <button class="burger-constructor__checkout">
+                  Checkout
+                </button>
+              </div>
+              <p class="burger-constructor__offer">
+                Build a
+                <span class="burger-constructor__offer-price">
+                  $10
+                </span>
+                Burger and Get a Gift
+              </p>
+            </div>
             <ul class="burger-constructor__summary-list summary-list">
               <li class="summary-list__item">
                 <img class="summary-list__img" src="images/svg/time.svg" alt="time">
@@ -255,39 +258,13 @@
               </li>
             </ul>
           </div>
-        </div>
 
-        <div class="mobile-summary__block">
-          <ul class="mobile-summary">
-            <li class="mobile-summary__item">
-              <img class="mobile-summary__img" src="images/svg/time.svg" alt="time">
-              <span class="mobile-summary__min">
-                0
-              </span>
-              &nbsp;min
-            </li>
-            <li class="mobile-summary__item">
-              <img class="mobile-summary__img" src="images/svg/scales.svg" alt="scales">
-              <span class="mobile-summary__weight">
-                0
-              </span>
-              &nbsp;oz
-            </li>
-            <li class="mobile-summary__item">
-              <img class="mobile-summary__img" src="images/svg/calories.svg" alt="calories">
-              <span class="mobile-summary__calories">
-                0
-              </span>
-              &nbsp;kcal
-            </li>
-          </ul>
-
-          <btn class="mobile-summary__ketchup-added" type="button">
+          <button class="mobile-summary__ketchup-added ketchup-btn" type="button">
             + Tomato Ketchup
             <span class="mobile-summary__span">
               1.2oz
             </span>
-          </btn>
+          </button>
         </div>
 
         <div class="ingridients container">
@@ -423,22 +400,21 @@
           </ul>
         </div>
 
-        <div class="mobile-checkout">
-          <p class="mobile-checkout__pricing">
+        <div class="mobile__price-block">
+          <p class="burger-constructor__pricing">
             $
-            <span class="mobile-checkout__price">
+            <span class="burger-constructor__price">
               0.00
             </span>
           </p>
-          <button class="mobile-checkout__btn">
+          <button class="burger-constructor__checkout">
             Checkout
           </button>
         </div>
-      </div>
 
     </section>
 
-    <section class="checkout" style="display: none">
+    <section class="checkout">
       <div class="checkout__inner">
         <div class="checkout__content">
           <div class="checkout__top">
@@ -453,27 +429,28 @@
           <form class="checkout__info">
 
             <div class="checkout__block">
-              <label class="checkout__label-name label" for="name">
+              <label class="checkout__label-name checkout-label" for="name">
                 Your Name
               </label>
-              <input class="checkout__name" type="text" name="name" placeholder="Jerome Porter" required>
+              <input class="checkout__name checkout-input" type="text" name="name" placeholder="Jerome Porter" required>
 
             </div>
 
             <div class="checkout__block">
 
-              <label class="checkout__label-phone label" for="phone">
+              <label class="checkout__label-phone checkout-label" for="phone">
                 Phone Number
               </label>
-              <input class="checkout__phone" type="phone" name="phone" placeholder="(433) 577-1343" required>
+              <input class="checkout__phone checkout-input" type="phone" name="phone" placeholder="(433) 577-1343"
+                required>
             </div>
 
             <div class="checkout__block">
-              <label class="checkout__label-address label" for="address">
+              <label class="checkout__label-address checkout-label" for="address">
                 Shipping Address
               </label>
-              <input class="checkout__address" type="text" name="address" placeholder="1038 Cinder Berry Turnabout"
-                required>
+              <input class="checkout__address checkout-input" type="text" name="address"
+                placeholder="1038 Cinder Berry Turnabout" required>
             </div>
 
             <div class="checkout__block">
@@ -506,7 +483,7 @@
             </div>
           </form>
         </div>
-        <div class="checkout__finished" style="display: none">
+        <div class="checkout__finished">
           Thank you for your order!
           You will receive the confirmation email shortly
         </div>
