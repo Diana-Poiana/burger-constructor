@@ -45,8 +45,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // const burgerMenuBtn = document.querySelector('.mobile-menu__burger-btn');
   // const mobileMenu = document.querySelector('.mobile-menu__list');
 
+  const imgsContainer = document.querySelector('.burger-constructor__imgs-container');
 
-  let currentBottomValue = 40;
+  const imgsContainerHeight = imgsContainer.clientHeight;
+  console.log(imgsContainerHeight);
+  let currentBottomValue = 5;
   let previousIngridient;
   let temporaryBottom;
   let tomatoCount = 0;
@@ -95,74 +98,177 @@ window.addEventListener('DOMContentLoaded', () => {
     const newElem = document.createElement('img');
     newElem.src = `images/burger-constructor/${ingridient}.png`;
     newElem.setAttribute('data-ingridient', ingridient);
-    newElem.classList.add('new-ingridient');
+    newElem.classList.add(ingridient);
     return newElem;
   }
 
+
+  let screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  console.log("Ширина экрана: " + screenWidth + " пикселей");
+
+
   // plus ingridient
   function plusIngridient(ingridient) {
+
     const newElem = createNewIngridient(ingridient);
     newElem.style.position = 'absolute';
-    newElem.style.left = 55 + 'px';
-    console.log(newElem);
-
-    if (ingridient === 'mayo' || ingridient === 'cheese') {
-      newElem.style.bottom = currentBottomValue - 30 + 'px';
-    }
-    else if (ingridient === 'onion') {
-
-      onionCount++;
-      if (onionCount === 1) {
-        newElem.style.left = 85 + 'px';
-        newElem.style.bottom = currentBottomValue + 10 + 'px';
-      } else if (onionCount % 2 === 0) {
-        newElem.style.left = 265 + 'px';
+    // FOR SMALL SCREENS
+    if (screenWidth < 626) {
+      newElem.style.width = '80%';
+      if (ingridient === 'cutlet') {
+        newElem.style.left = 38 + 'px';
         newElem.style.bottom = currentBottomValue + 'px';
-      } else if (onionCount % 2 === 1) {
-        newElem.style.left = 85 + 'px';
-        newElem.style.bottom = currentBottomValue + 10 + 'px';
       }
 
-    }
-    else if (ingridient === 'tomato') {
-      tomatoCount++;
+      else if (ingridient === 'mayo') {
+        newElem.style.left = 35 + 'px';
+        newElem.style.bottom = currentBottomValue - 20 + 'px';
+      }
 
-      if (tomatoCount === 1) {
+      else if (ingridient === 'onion') {
+        newElem.style.width = '40%';
+        onionCount++;
+        if (onionCount === 1) {
+          newElem.style.left = 40 + 'px';
+          newElem.style.bottom = currentBottomValue + 10 + 'px';
+        } else if (onionCount % 2 === 0) {
+          newElem.style.left = 158 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        } else if (onionCount % 2 === 1) {
+          newElem.style.left = 40 + 'px';
+          newElem.style.bottom = currentBottomValue + 10 + 'px';
+        }
+      }
+
+      else if (ingridient === 'tomato') {
+        newElem.style.width = '40%';
+        tomatoCount++;
+        newElem.style.left = 32 + 'px';
+        if (tomatoCount === 1) {
+          newElem.style.bottom = currentBottomValue + 'px';
+        } else if (tomatoCount % 2 === 0) {
+          newElem.style.left = 162 + 'px';
+          newElem.style.bottom = currentBottomValue - 10 + 'px';
+        } else if (tomatoCount % 2 === 1) {
+          newElem.style.left = 32 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        }
+      }
+
+      else if (ingridient === 'cucumber') {
+        newElem.style.width = '30%';
+        cucumberCount++;
+        if (cucumberCount === 1) {
+          console.log(cucumberCount);
+          newElem.style.left = 47 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        } else if (cucumberCount % 2 === 0) {
+          console.log(cucumberCount);
+          newElem.style.left = 177 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        } else if (cucumberCount % 2 === 1) {
+          console.log(cucumberCount);
+          newElem.style.left = 47 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        }
+      }
+
+      else if (ingridient === 'cheese') {
+        newElem.style.left = 35 + 'px';
+        newElem.style.bottom = currentBottomValue - 30 + 'px';
+      }
+
+      else if (ingridient === 'salad') {
+        newElem.style.left = 33 + 'px';
         newElem.style.bottom = currentBottomValue + 'px';
-      } else if (tomatoCount % 2 === 0) {
-        newElem.style.left = 200 + 'px';
-        newElem.style.bottom = currentBottomValue - 10 + 'px';
-      } else if (tomatoCount % 2 === 1) {
+      }
+
+      else if (ingridient === 'bun') {
+        newElem.style.left = 30 + 'px';
+        newElem.style.bottom = currentBottomValue + 30 + 'px';
+      }
+    } else {
+      // FOR BIG SCREENS
+      if (ingridient === 'mayo') {
+        newElem.style.left = 40 + 'px';
+        newElem.style.bottom = currentBottomValue - 30 + 'px';
+      }
+
+      else if (ingridient === 'onion') {
+        onionCount++;
+        if (onionCount === 1) {
+          newElem.style.left = 85 + 'px';
+          newElem.style.bottom = currentBottomValue + 10 + 'px';
+        }
+        else if (onionCount % 2 === 0) {
+          newElem.style.left = 265 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        }
+        else if (onionCount % 2 === 1) {
+          newElem.style.left = 85 + 'px';
+          newElem.style.bottom = currentBottomValue + 10 + 'px';
+        }
+      }
+
+      else if (ingridient === 'tomato') {
+        tomatoCount++;
+        newElem.style.left = 55 + 'px';
+        if (tomatoCount === 1) {
+          newElem.style.bottom = currentBottomValue + 'px';
+        }
+        else if (tomatoCount % 2 === 0) {
+          newElem.style.left = 200 + 'px';
+          newElem.style.bottom = currentBottomValue - 10 + 'px';
+        }
+        else if (tomatoCount % 2 === 1) {
+          newElem.style.left = 55 + 'px';
+          newElem.style.bottom = currentBottomValue + 'px';
+        }
+      }
+
+      else if (ingridient === 'cucumber') {
+        cucumberCount++;
+        if (cucumberCount === 1) {
+          console.log(cucumberCount);
+          newElem.style.left = 120 + 'px';
+          newElem.style.bottom = currentBottomValue + 30 + 'px';
+        }
+        else if (cucumberCount % 2 === 0) {
+          console.log(cucumberCount);
+          newElem.style.left = 280 + 'px';
+          newElem.style.bottom = currentBottomValue + 20 + 'px';
+        }
+        else if (cucumberCount % 2 === 1) {
+          console.log(cucumberCount);
+          newElem.style.left = 120 + 'px';
+          newElem.style.bottom = currentBottomValue + 30 + 'px';
+        }
+      }
+
+      else if (ingridient === 'cheese') {
+        newElem.style.left = 55 + 'px';
+        newElem.style.bottom = currentBottomValue - 30 + 'px';
+      }
+
+      else if (ingridient === 'bun') {
+        newElem.style.left = 50 + 'px';
+        newElem.style.bottom = currentBottomValue + 30 + 'px';
+      }
+
+      else if (ingridient === 'salad') {
+        newElem.style.left = 40 + 'px';
+        newElem.style.bottom = currentBottomValue + 'px';
+      }
+
+      else if (ingridient === 'topbun') {
+        newElem.style.left = 52 + 'px';
+        newElem.style.bottom = currentBottomValue + 40 + 'px';
+      }
+
+      else {
         newElem.style.left = 55 + 'px';
         newElem.style.bottom = currentBottomValue + 'px';
-
       }
-    }
-    else if (ingridient === 'cucumber') {
-      cucumberCount++;
-      if (cucumberCount === 1) {
-        console.log(cucumberCount);
-        newElem.style.left = 120 + 'px';
-        newElem.style.bottom = currentBottomValue + 30 + 'px';
-      } else if (cucumberCount % 2 === 0) {
-        console.log(cucumberCount);
-        newElem.style.left = 280 + 'px';
-        newElem.style.bottom = currentBottomValue + 20 + 'px';
-      } else if (cucumberCount % 2 === 1) {
-        console.log(cucumberCount);
-        newElem.style.left = 120 + 'px';
-        newElem.style.bottom = currentBottomValue + 30 + 'px';
-      }
-
-    }
-    else if (ingridient === 'bun') {
-      newElem.style.bottom = currentBottomValue + 30 + 'px';
-    }
-    else if (ingridient === 'topbun') {
-      newElem.style.bottom = currentBottomValue + 40 + 'px';
-    }
-    else {
-      newElem.style.bottom = currentBottomValue + 'px';
     }
 
     currentBottomValue += 10;
@@ -189,35 +295,47 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // update ingridient positions
   function updateIngridientPositions() {
-    const elementsToUpdate = burgerNewIngridientContainer.querySelectorAll('[data-ingridient]');
-    elementsToUpdate.forEach((elem, i) => {
-      let ing = elem.getAttribute('data-ingridient');
+    // FOR SMALL SCREENS
+    if (screenWidth < 626) {
+      const elementsToUpdate = burgerNewIngridientContainer.querySelectorAll('[data-ingridient]');
+      elementsToUpdate.forEach((elem, i) => {
+        let ing = elem.getAttribute('data-ingridient');
 
-      if (ing === 'mayo' || ing === 'cheese') {
-        elem.style.bottom = `${(10 * i) + 10}px`;
-      } else if (ing === 'onion') {
-        elem.style.bottom = `${50 + (10 * i)}px`;
-        //   if (onionCount === 1) {
-        //     elem.style.bottom = `${50 + (10 * i)}px`;
-        //     onionCount--;
-        //   } else if (onionCount % 2 === 0) {
-        //     elem.style.bottom = `${40 + (10 * i)}px`;
-        //     onionCount--;
-        //   } else if (onionCount % 2 === 1) {
-        //     elem.style.bottom = `${50 + (10 * i)}px`;
-        //     onionCount--;
-        //   }
+        if (ing === 'mayo' || ing === 'cheese') {
+          elem.style.bottom = `${(10 * i) - 15}px`;
+        } else if (ing === 'onion') {
+          elem.style.bottom = `${15 + (10 * i)}px`;
+        } else if (ing === 'cucumber') {
+          elem.style.bottom = `${5 + (10 * i)}px`;
+        } else if (ing === 'bun') {
+          elem.style.bottom = `${35 + (10 * i)}px`;
+        }
+        else {
+          elem.style.bottom = `${5 + (10 * i)}px`;
+        }
+      });
+      currentBottomValue = elementsToUpdate.length * 10 + 5;
+    }
+    //FOR BIG SCREENS
+    else {
+      const elementsToUpdate = burgerNewIngridientContainer.querySelectorAll('[data-ingridient]');
+      elementsToUpdate.forEach((elem, i) => {
+        let ing = elem.getAttribute('data-ingridient');
 
-      } else if (ing === 'cucumber') {
-        elem.style.bottom = `${70 + (10 * i)}px`;
-      } else if (ing === 'bun') {
-        elem.style.bottom = `${70 + (10 * i)}px`;
-      } else {
-        elem.style.bottom = `${40 + (10 * i)}px`;
-      }
-    });
-
-    currentBottomValue = elementsToUpdate.length * 10 + 40;
+        if (ing === 'mayo' || ing === 'cheese') {
+          elem.style.bottom = `${(10 * i) - 25}px`;
+        } else if (ing === 'onion') {
+          elem.style.bottom = `${15 + (10 * i)}px`;
+        } else if (ing === 'cucumber') {
+          elem.style.bottom = `${35 + (10 * i)}px`;
+        } else if (ing === 'bun') {
+          elem.style.bottom = `${35 + (10 * i)}px`;
+        } else {
+          elem.style.bottom = `${5 + (10 * i)}px`;
+        }
+      });
+      currentBottomValue = elementsToUpdate.length * 10 + 5;
+    }
   }
 
   function checkIfNotTooBigBurger() {
@@ -238,20 +356,40 @@ window.addEventListener('DOMContentLoaded', () => {
   // adding ingridient animation
   function animation(element) {
 
+    if (imgsContainerHeight >= 627) {
+      const animation = element.animate(
+        [
+          { transform: 'translate(0)' },
+          { transform: 'translate(0, 630px)' }
+        ],
+        {
+          duration: 500
+        }
+      );
 
-    const animation = element.animate(
-      [
-        { transform: 'translate(0)' },
-        { transform: 'translate(0, 630px)' }
-      ],
-      {
-        duration: 500
-      }
-    );
+      animation.addEventListener('finish', function () {
+        element.style.transform = 'translate(0, 630px)';
+      });
+    } else if (imgsContainerHeight < 627) {
 
-    animation.addEventListener('finish', function () {
-      element.style.transform = 'translate(0, 630px)';
-    });
+      let difference = imgsContainerHeight - 740;
+      console.log(difference);
+      let translateY = 630 + difference;
+      const animation = element.animate(
+        [
+          { transform: 'translate(0)' },
+          { transform: `translate(0, ${translateY}px)` }
+        ],
+        {
+          duration: 500
+        }
+      );
+
+      animation.addEventListener('finish', function () {
+        element.style.transform = `translate(0, ${translateY}px)`;
+      });
+    }
+
   }
 
 

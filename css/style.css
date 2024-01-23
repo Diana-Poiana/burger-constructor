@@ -592,7 +592,7 @@ body {
 
 .burger-constructor__content {
   position: relative;
-  width: 80%;
+  
 }
 
 .new-ingridients {
@@ -657,19 +657,20 @@ body {
 
 .burger-constructor__imgs-container {
   position: relative;
-  height: 700px;
+  margin-top: -80px;
+  
 }
 
 .burger-constructor__bg {
   position: relative;
-  bottom: 0;
+  bottom: -120px;
   z-index: -1;
 }
 
 .burger-constructor__bottom-bun {
   display: inline-block;
   position: relative;
-  bottom: 120px;
+  bottom: 0;
   z-index: -1;
 }
 
@@ -774,6 +775,11 @@ body {
 }
 
 /* mobile summary */
+
+.mobile-summary__block {
+  display: none;
+}
+
 .mobile-summary {
   font-size: 20px;
   display: flex;
@@ -791,7 +797,6 @@ body {
 }
 
 .mobile-summary__ketchup-added {
-  display: block;
   margin: 0 auto;
   text-align: center;
   padding: 24px 12px;
@@ -799,6 +804,7 @@ body {
   background-color: #ffeded;
   border-radius: 25px;
   width: 300px;
+  display: none;
 }
 
 .mobile-summary__span {
@@ -818,6 +824,7 @@ body {
   font-size: 36px;
   color: #5243c2;
   margin-bottom: 12px;
+  display: none;
 }
 
 .mobile-checkout__btn {
@@ -829,10 +836,60 @@ body {
   color: #ffffff;
   width: 300px;
   margin: 0 auto;
+  display: none;
 }
 
 
 /* ingridients */
+
+.cutlet {
+  width: 434px;
+  height: auto;
+}
+
+.mayo {
+  width: 454px;
+  height: auto;
+}
+
+.onion {
+  width: 175px;
+  height: auto;
+}
+
+.tomato {
+  width: 272px;
+  height: auto;
+}
+
+.cucumber {
+  width: 114px;
+  height: auto;
+}
+
+.cheese {
+  width: 420px;
+  height: auto;
+}
+
+.salad {
+  width: 446px;
+  height: auto;
+}
+
+.bun {
+  width: 432px;
+  height: auto;
+}
+
+.topbun {
+  width: 427px;
+  height: auto;
+}
+
+.ketchup {
+  height: auto;
+}
 
 .ingridients {
   padding: 15px 0;
@@ -1188,16 +1245,25 @@ input::placeholder {
       display: flex;
     }
 
+    .mobile-summary__block {
+      display: block;
+    }
+
     .burger-constructor__inner {
       justify-content: center;
     }
 
-    .burger-constructor__burger-container {
-      
-    }
-
     .burger-constructor__summary {
       display: none;
+    }
+
+    .mobile-checkout__pricing {
+      display: block;
+    }
+
+    .mobile-checkout__btn,
+    .mobile-summary__ketchup-added{
+      display: block;
     }
   }
   
@@ -1245,18 +1311,20 @@ input::placeholder {
     
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 627px) {
     .burger-constructor__imgs-container {
-      position: relative;
-      height: 100%;
+      /* position: relative;
+      height: 100%; */
+      width: 320px;
+      margin-bottom: 30px;
     }
 
     .burger-constructor__bg {
-      bottom: -60px;
+      /* bottom: -60px; */
     }
 
     .burger-constructor__bottom-bun {
-      bottom: 35px;
+      /* bottom: 35px; */
     }
   }
   
@@ -1298,7 +1366,7 @@ input::placeholder {
 
     .mobile-summary__ketchup-added,
     .mobile-checkout__btn {
-      width: 100%
+      width: 100%;
     }
 
     .footer__links {
