@@ -461,8 +461,9 @@ body {
 /* hero section */
 
 .hero {
+  height: calc(100vh - 208px);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 

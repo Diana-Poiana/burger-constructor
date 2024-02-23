@@ -69,7 +69,6 @@ window.addEventListener('DOMContentLoaded', () => {
   let screenWidth;
   function updateScreenWidth() {
     screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    console.log("Screen width: " + screenWidth + "px");
   }
 
   updateScreenWidth();
@@ -152,15 +151,12 @@ window.addEventListener('DOMContentLoaded', () => {
         newElem.style.width = '30%';
         cucumberCount++;
         if (cucumberCount === 1) {
-          console.log(cucumberCount);
           newElem.style.left = 47 + 'px';
           newElem.style.bottom = currentBottomValue + 'px';
         } else if (cucumberCount % 2 === 0) {
-          console.log(cucumberCount);
           newElem.style.left = 177 + 'px';
           newElem.style.bottom = currentBottomValue + 'px';
         } else if (cucumberCount % 2 === 1) {
-          console.log(cucumberCount);
           newElem.style.left = 47 + 'px';
           newElem.style.bottom = currentBottomValue + 'px';
         }
@@ -227,17 +223,14 @@ window.addEventListener('DOMContentLoaded', () => {
       else if (ingridient === 'cucumber') {
         cucumberCount++;
         if (cucumberCount === 1) {
-          console.log(cucumberCount);
           newElem.style.left = 120 + 'px';
           newElem.style.bottom = currentBottomValue + 30 + 'px';
         }
         else if (cucumberCount % 2 === 0) {
-          console.log(cucumberCount);
           newElem.style.left = 280 + 'px';
           newElem.style.bottom = currentBottomValue + 20 + 'px';
         }
         else if (cucumberCount % 2 === 1) {
-          console.log(cucumberCount);
           newElem.style.left = 120 + 'px';
           newElem.style.bottom = currentBottomValue + 30 + 'px';
         }
@@ -280,7 +273,6 @@ window.addEventListener('DOMContentLoaded', () => {
   function minusIngridient(ingridient) {
     const elementsToRemove = burgerNewIngridientContainer.querySelectorAll(`[data-ingridient="${ingridient}"]`);
     const lastElement = elementsToRemove[elementsToRemove.length - 1];
-    console.log(lastElement);
     if (lastElement) {
       lastElement.remove();
       updateIngridientPositions();
@@ -376,7 +368,6 @@ window.addEventListener('DOMContentLoaded', () => {
   function checkIfNotTooBigBurger() {
     const elementsToCheck = burgerNewIngridientContainer.querySelectorAll('[data-ingridient]');
     const elementsArray = Array.from(elementsToCheck);
-    console.log(elementsArray.length);
     if (elementsArray.length > 30) {
       warningMessage.style.display = 'flex';
       warningMessage.style.animation = 'showwarning 1s';
